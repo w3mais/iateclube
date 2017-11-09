@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+  	<button ion-button menuToggle>
+  		<ion-icon name="menu"></ion-icon>
+  	</button>
+    <ion-title>
+      Sócios Iate Clube
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+	  <ion-list-header color="dark">
+	    Agendamentos
+	  </ion-list-header>
+	  <ion-item *ngFor="let servico of servicos" (click)="selecionarServico(servico)">{{ servico.nome }}</ion-item>
+
+	  <ion-list-header color="dark">
+	    Serviços
+	  </ion-list-header>
+	  <ion-item>Seu Cadastro</ion-item>
+	  <ion-item>Dependentes</ion-item>
+	  <ion-item>Convidar</ion-item>
+	  <ion-item>Financeiro</ion-item>
+	  <ion-item>Fale Conosco</ion-item>
+	</ion-list>
+</ion-content>

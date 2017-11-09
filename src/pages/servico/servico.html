@@ -1,0 +1,27 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Agendamento - {{ servico.nome }}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	
+	<ion-item>
+  		<ion-label>Escolha a data</ion-label>
+  		<ion-datetime displayFormat="DD/MM/YYYY"  pickerFormat="DD/MM/YYYY" [(ngModel)]="data" min="{{ data }}" doneText="Selecionar" cancelText="Cancelar"></ion-datetime>
+	</ion-item>
+	<ion-item>
+    	<ion-label>Embarcação</ion-label>
+        <ion-select multiple="false">
+          <ion-option *ngFor="let embarcacao of embarcacoes" value="{{ embarcacao.id }}">{{ embarcacao.nome }}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+    	<ion-label>Horários Disponíveis</ion-label>
+        <ion-select>          
+          <ion-option *ngFor="let horario of horarios" value="{{ horario.hora }}">{{ horario.hora }} - {{ horario.status }}</ion-option>
+        </ion-select>
+	</ion-item>
+
+	<button ion-button>Agendar</button>
+</ion-content>
